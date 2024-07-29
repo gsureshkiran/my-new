@@ -1,11 +1,11 @@
 FROM alpine/git as clone
 MAINTAINER stangella<stangella9@gmail.com>
 WORKDIR /app
-RUN git clone https://github.com/sresrinivas/etoe.git
+RUN git clone https://github.com/gsureshkiran/my-new.git
 # stage-two
-FROM maven:3.5-jdk-8-alpine as build
+FROM maven:3.5-jdk-17-alpine as build
 WORKDIR /app
-COPY --from=clone  /app/etoe  /app
+COPY --from=clone  /app/my-new  /app
 RUN mvn package
 # stage-third
 FROM tomcat:7-jre7
