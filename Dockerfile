@@ -11,5 +11,5 @@
 FROM tomcat:7-jre7
 
 ADD tomcat-users.xml /usr/local/tomcat/conf
-#COPY --from=build /app/target/my-app-1.0-SNAPSHOT.jar /usr/local/tomcat/webapps
+#COPY --from=build /app/target/my-app-1.0-SNAPSHOT.war /usr/local/tomcat/webapps
 COPY target/*.jar /usr/local/tomcat/webapps
